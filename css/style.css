@@ -133,3 +133,17 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+/* camiones */
+.truck-slider {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+.truck-slider img {
+    width: 100%;
+    height: auto;
+}

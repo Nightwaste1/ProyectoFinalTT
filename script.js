@@ -20,3 +20,21 @@ document.addEventListener('DOMContentLoaded', function () {
         shipmentInfo.appendChild(newCommodity);
     });
 });
+
+/* galeria de camiones */
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('js/trucks.json')
+        .then(response => response.json())
+        .then(data => {
+            const truckImage = document.getElementById('truck-image');
+            let currentIndex = 0;
+
+            const rotateImages = () => {
+                currentIndex = (currentIndex + 1) % data.length;
+                truckImage.src = data[currentIndex].src;
+            };
+
+            setInterval(rotateImages, 3000); // Cambia la imagen cada 3 segundos
+        })
+        .catch(error => console.error('Error loading truck images:', error));
+});
