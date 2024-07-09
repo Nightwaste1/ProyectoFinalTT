@@ -85,3 +85,51 @@ footer {
     text-align: center;
     padding: 10px 20px;
 }
+
+/* css formulario flete */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+legend {
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
