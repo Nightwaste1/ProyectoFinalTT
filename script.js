@@ -42,6 +42,24 @@ document.getElementById('pickup-request-form').addEventListener('submit', functi
                 p {
                     margin-bottom: 10px;
                 }
+                .thanks-message {
+                    margin-top: 20px;
+                    font-weight: bold;
+                    color: #2E8B57;
+                }
+                .return-button {
+                    display: block;
+                    margin-top: 20px;
+                    padding: 10px 20px;
+                    background-color: #007BFF;
+                    color: white;
+                    text-align: center;
+                    text-decoration: none;
+                    border-radius: 5px;
+                }
+                .return-button:hover {
+                    background-color: #0056b3;
+                }
             </style>
         </head>
         <body>
@@ -73,6 +91,9 @@ document.getElementById('pickup-request-form').addEventListener('submit', functi
             <hr>
             <h3>Additional Information</h3>
             <p>${additionalComments}</p>
+            <hr>
+            <p class="thanks-message">Thanks for choosing us for your transportation needs, we will contact you soon to discuss this quote.</p>
+            <a href="index.html" class="return-button">Return to Home</a>
         </body>
         </html>
     `;
@@ -81,3 +102,19 @@ document.getElementById('pickup-request-form').addEventListener('submit', functi
     const newWindow = window.open();
     newWindow.document.write(billOfLadingContent);
 });
+
+// Rotación de imágenes de camiones
+fetch('js/trucks.json')
+    .then(response => response.json())
+    .then(data => {
+        const truckImage = document.getElementById('truck-image');
+        let currentIndex = 0;
+
+        const rotateImages = () => {
+            currentIndex = (currentIndex + 1) % data.length;
+            truckImage.src = data[currentIndex].src;
+        };
+
+        setInterval(rotateImages, 3000); // Cambia la imagen cada 3 segundos
+    })
+    .catch(error => console.error('Error loading truck images:', error));
