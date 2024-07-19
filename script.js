@@ -1,7 +1,7 @@
 document.getElementById('pickup-request-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevenir el envío por defecto
     
-    // Obtener valores del formulario
+    // Obtener valores del formulario // 
     const pickupDate = document.getElementById('pickup-date').value;
     const shipmentReadyAt = document.getElementById('shipment-ready-at').value;
     const company = document.getElementById('company').value;
@@ -115,6 +115,6 @@ fetch('js/trucks.json')
             truckImage.src = data[currentIndex].src;
         };
 
-        setInterval(rotateImages, 3000); // Cambia la imagen cada 3 segundos
+        setInterval(rotateImages, 3000);
     })
     .catch(error => console.error('Error loading truck images:', error));

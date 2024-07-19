@@ -1,7 +1,7 @@
 // michis.js
 const apiKey = 'live_DMRQ7tjpxtQXVpu1cjOyjBIMxOFyErogNUvusEjvKntLOVgj1TeJf6pZ1IKlXC1E';
 
-// Función para cargar imágenes de gatos aleatorios
+// Función para cargar michis aleatorios
 async function loadRandomCatImages() {
     const response = await fetch('https://api.thecatapi.com/v1/images/search?limit=5', {
         headers: {
@@ -23,7 +23,7 @@ async function loadRandomCatImages() {
 
 document.getElementById('load-cat-images').addEventListener('click', loadRandomCatImages);
 
-// Función para cargar una raza de gato al azar
+// Función para cargar una raza aleatoria
 async function loadRandomCatBreed() {
     const response = await fetch('https://api.thecatapi.com/v1/breeds', {
         headers: {
@@ -97,7 +97,7 @@ async function loadCatOfTheDay() {
 
         const voteCount = document.createElement('p');
         voteCount.id = 'vote-count';
-        voteCount.textContent = `votos: ${0}`; // Start with 0 votes
+        voteCount.textContent = `votos: ${0}`; 
 
         catOfTheDayDiv.appendChild(img);
         catOfTheDayDiv.appendChild(voteButton);
@@ -125,7 +125,7 @@ async function voteForCat(catId) {
         const voteCountElement = document.getElementById('vote-count');
         let currentVoteCount = parseInt(voteCountElement.textContent.split(': ')[1]);
         currentVoteCount += 1;
-        voteCountElement.textContent = `Votes: ${currentVoteCount}`;
+        voteCountElement.textContent = `Votos: ${currentVoteCount}`;
     } else {
         alert('An error occurred while voting.');
     }
